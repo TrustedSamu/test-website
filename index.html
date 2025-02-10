@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feudenheim Energie - Ihr lokaler Energieversorger</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="text-primary">Feudenheim</span> Energie
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tarife">Tarife</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aktuelles">Aktuelles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontakt">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="fw-bold">Willkommen bei Feudenheim Energie</h1>
+                    <p class="lead">Ihre verlässliche Energieversorgung in der Region</p>
+                    <a href="#tarife" class="btn btn-primary btn-lg">Unsere Tarife entdecken</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="tarife" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Unsere Tarife</h2>
+            <div class="row">
+                <!-- Tariff cards will be dynamically inserted here -->
+                <div class="col-12 text-center" id="loading-tariffs">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aktuelles" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Aktuelles</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Neue Ökostromanlagen in Betrieb</h3>
+                            <p class="card-text">Wir haben unsere erneuerbaren Energiequellen erweitert. Zwei neue Solarparks sind nun am Netz.</p>
+                            <p class="text-muted">15. März 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Preisgarantie verlängert</h3>
+                            <p class="card-text">Für unsere Bestandskunden verlängern wir die Preisgarantie um weitere 12 Monate.</p>
+                            <p class="text-muted">1. März 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Kontakt</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Kontaktieren Sie uns</h3>
+                    <p><i class="fas fa-phone"></i> Telefon: 0621 / 123 456</p>
+                    <p><i class="fas fa-envelope"></i> E-Mail: info@feudenheim-energie.de</p>
+                    <p><i class="fas fa-clock"></i> Öffnungszeiten: Mo-Fr 8:00-18:00 Uhr</p>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="E-Mail">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Ihre Nachricht"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Feudenheim Energie</h4>
+                    <p>Ihr verlässlicher Partner für Energie in der Region</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Impressum</a></li>
+                        <li><a href="#" class="text-light">Datenschutz</a></li>
+                        <li><a href="#" class="text-light">AGB</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Folgen Sie uns</h4>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+
+    <!-- Our module scripts -->
+    <script type="module">
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC81iJvRggv4mKbzAAO1UAXfmpRVjyXkjk",
+            authDomain: "gourmet-86e7c.firebaseapp.com",
+            projectId: "gourmet-86e7c",
+            storageBucket: "gourmet-86e7c.firebasestorage.app",
+            messagingSenderId: "152363294210",
+            appId: "1:152363294210:web:9f78afca11bae4424d911b"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        window.db = firebase.firestore();
+        window.auth = firebase.auth();
+        console.log("Firebase initialized with project:", firebase.app().options.projectId);
+    </script>
+    <script type="module" src="js/tariffs.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html> 
