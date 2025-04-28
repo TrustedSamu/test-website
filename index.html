@@ -166,7 +166,36 @@
         firebase.initializeApp(firebaseConfig);
         window.db = firebase.firestore();
         window.auth = firebase.auth();
+        
+        // Enable Firestore logging for debugging
+        firebase.firestore.setLogLevel('debug');
         console.log("Firebase initialized with project:", firebase.app().options.projectId);
+        
+        // Test Firestore access
+        window.testFirestore = async function() {
+            try {
+                console.log("Testing Firestore access...");
+                const collections = await window.db.listCollections();
+                console.log("Available collections:", collections.map(c => c.id));
+                
+                const tariffsRef = window.db.collection('tariffs');
+                const snapshot = await tariffsRef.get();
+                console.log("Tariffs collection exists:", !snapshot.empty);
+                console.log("Number of documents:", snapshot.size);
+                
+                snapshot.forEach(doc => {
+                    console.log("Document:", doc.id, doc.data());
+                });
+                
+                return "Firestore test completed. Check console for results.";
+            } catch (error) {
+                console.error("Firestore test error:", error);
+                return "Firestore test error: " + error.message;
+            }
+        };
+        
+        // Run test
+        window.testFirestore().then(result => console.log(result));
     </script>
     <script type="module" src="js/tariffs.js"></script>
     <script type="module" src="js/main.js"></script>

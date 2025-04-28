@@ -3,14 +3,28 @@ const TARIFFS_COLLECTION = 'tariffs';
 // Function to fetch all tariffs
 export const getTariffs = async () => {
     try {
+        console.log("Attempting to fetch tariffs from collection:", TARIFFS_COLLECTION);
+        
+        // Check if Firestore is properly initialized
+        if (!window.db) {
+            console.error("Firestore is not properly initialized");
+            return [];
+        }
+        
         const querySnapshot = await window.db.collection(TARIFFS_COLLECTION).get();
+        console.log("Query executed, snapshot:", querySnapshot);
+        
         const tariffs = [];
         querySnapshot.forEach((doc) => {
+            console.log("Document found:", doc.id, doc.data());
             tariffs.push({ id: doc.id, ...doc.data() });
         });
+        
+        console.log("Total tariffs retrieved:", tariffs.length);
         return tariffs;
     } catch (error) {
         console.error("Error fetching tariffs:", error);
+        alert("Error fetching tariffs: " + error.message);
         throw error;
     }
 };

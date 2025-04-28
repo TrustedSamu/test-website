@@ -24,14 +24,34 @@ const createTariffCard = (tariff) => {
 const displayTariffs = async () => {
     try {
         const tariffsContainer = document.querySelector('#tarife .row');
+        console.log("Fetching tariffs...");
         const tariffs = await getTariffs();
+        console.log("Tariffs fetched:", tariffs);
+        
+        // Remove loading spinner
+        const loadingElement = document.getElementById('loading-tariffs');
+        if (loadingElement) {
+            loadingElement.remove();
+        }
         
         if (tariffs.length > 0) {
             const tariffCards = tariffs.map(tariff => createTariffCard(tariff)).join('');
             tariffsContainer.innerHTML = tariffCards;
+        } else {
+            tariffsContainer.innerHTML = `
+                <div class="col-12 text-center">
+                    <p>Keine Tarife gefunden. Bitte versuchen Sie es später erneut.</p>
+                </div>
+            `;
         }
     } catch (error) {
         console.error("Error displaying tariffs:", error);
+        const tariffsContainer = document.querySelector('#tarife .row');
+        tariffsContainer.innerHTML = `
+            <div class="col-12 text-center">
+                <p class="text-danger">Fehler beim Laden der Tarife: ${error.message}</p>
+            </div>
+        `;
     }
 };
 
